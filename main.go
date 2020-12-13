@@ -51,12 +51,6 @@ func findKeyboardEvent() (string, error) {
 	return re.FindString(handlerLine), nil
 }
 
-type InputEvent struct {
-	_type uint16
-	code uint16
-	val uint32
-}
-
 func listenKeyPressing(event string) error {
 	eventX, err := os.Open("/dev/input/" + event)
 
